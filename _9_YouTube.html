@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ถึงอะตอม</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;background:#faf8f5;color:#2e2a28;font-family:'Sarabun',sans-serif;
+font-weight:300;display:flex;align-items:center;justify-content:center;padding:34px;overflow-x:hidden}
+.wrap{max-width:440px;width:100%;text-align:center}
+.screen{display:none}
+.screen.on{display:block;animation:fade 1.1s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.serif{font-family:'Playfair Display',serif;font-style:italic}
+h1{font-size:1.85rem;font-weight:400;line-height:1.55;margin-bottom:18px;letter-spacing:.3px}
+p{font-size:1rem;line-height:2.15;color:#5c5551;margin-bottom:14px}
+.small{font-size:.72rem;letter-spacing:3px;color:#a89e97;margin-bottom:24px}
+.line{width:34px;height:1px;background:#d9cfc6;margin:30px auto}
+.btn{background:none;border:1px solid #2e2a28;color:#2e2a28;padding:13px 30px;
+font-family:'Sarabun',sans-serif;font-size:.88rem;font-weight:300;letter-spacing:1.4px;
+cursor:pointer;transition:.4s;margin:6px 4px}
+.btn:hover{background:#2e2a28;color:#faf8f5}
+.btn.soft{border-color:#cfc5bc;color:#8a807a}
+.month{display:none}
+.month.show{display:block;animation:fade .9s ease}
+.photo{width:100%;height:235px;object-fit:cover;filter:grayscale(.3);margin:22px 0}
+.dots{margin:28px 0 18px}
+.dot{width:5px;height:5px;border-radius:50%;background:#ded5cc;display:inline-block;
+margin:0 4px;transition:.4s}
+.dot.on{background:#2e2a28;width:16px;border-radius:3px}
+#music{position:fixed;top:20px;right:20px;background:none;border:none;cursor:pointer;
+font-size:.68rem;letter-spacing:2px;color:#a89e97;font-family:'Sarabun',sans-serif;z-index:20}
+#yt{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;top:0;left:0}
+.petal{position:fixed;top:-30px;color:#e3cfc6;font-size:13px;pointer-events:none;
+animation:fall linear forwards;z-index:5}
+@keyframes fall{to{transform:translateY(106vh) rotate(200deg);opacity:0}}
+.note{font-size:.82rem;color:#a89e97;margin-top:24px;line-height:1.9}
+</style>
+</head>
+<body>
+
+<button id="music">♪ เปิดเพลง</button>
+
+<!-- ===== เพลง: เปลี่ยน VIDEO_ID เป็นรหัสคลิป YouTube ===== -->
+<iframe id="yt"
+src="https://www.youtube.com/embed/VIDEO_ID?enablejsapi=1&loop=1&playlist=VIDEO_ID&controls=0"
+allow="autoplay" frameborder="0"></iframe>
+
+<div class="wrap">
+
+<!-- ========== 1 : เปิด ========== -->
+<div class="screen on" id="s1">
+  <div class="small">ถึง อะตอม</div>
+  <h1 class="serif">มีบางอย่าง<br>ที่เก็บไว้นานแล้ว</h1>
+  <div class="line"></div>
+  <p>ไม่ใช่เรื่องใหญ่อะไรหรอก<br>
+  แค่เป็นเรื่องที่ควรพูดตั้งนานแล้ว<br>
+  แต่ไม่รู้จะเริ่มยังไง เลยเขียนไว้ตรงนี้แทน</p>
+  <button class="btn" onclick="go('s2')">อ่านต่อ</button>
+</div>
+
+<!-- ========== 2 : ไทม์ไลน์ 9 เดือน ========== -->
+<div class="screen" id="s2">
+
+  <div class="month show">
+    <div class="small">เดือนที่ หนึ่ง</div>
+    <p>ตอนนั้นเราเป็นแค่คนที่เพิ่งรู้จักกัน<br>
+    คุยกันไปเรื่อย ไม่ได้คิดอะไรมาก<br>
+    ไม่รู้เลยว่าคนที่ชื่ออะตอมคนนี้<br>
+    จะกลายเป็นคนที่เราอยากเล่าให้ฟังก่อนใคร</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ สอง</div>
+    <p>เริ่มคุยกันทุกวันโดยไม่ได้นัดกันไว้<br>
+    ตื่นมาก็หยิบมือถือขึ้นมาดูก่อนเลย<br>
+    ว่าเธอทักมาหรือยัง<br>
+    ตอนนั้นยังบอกตัวเองอยู่ว่าไม่ได้คิดอะไร</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ สาม</div>
+    <p>เริ่มชินกับการมีเธออยู่ในแต่ละวัน<br>
+    วันไหนไม่ได้คุย รู้สึกเหมือนลืมอะไรไว้<br>
+    ตอนนั้นแหละที่เริ่มรู้ตัว<br>
+    ว่าเธอไม่ใช่แค่คนที่คุยด้วยแล้ว</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ สี่</div>
+    <p>เริ่มเล่าเรื่องที่ไม่เคยเล่าให้ใครฟัง<br>
+    เรื่องเหนื่อย เรื่องกวนใจ เรื่องไร้สาระ<br>
+    เธอฟังหมดทุกเรื่อง ไม่เคยทำให้รู้สึกว่ามันเยอะ<br>
+    แค่นั้นก็ทำให้วันแย่ ๆ ดีขึ้นได้แล้ว</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ ห้า</div>
+    <p>วันที่ได้เจอกันจริง ๆ<br>
+    เราเตรียมคำพูดไว้เยอะมาก<br>
+    แต่พอเจอหน้า กลับพูดไม่ออกสักคำ<br>
+    รู้แค่ว่าอยากให้เวลาเดินช้ากว่านี้</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ หก</div>
+    <p>ครั้งแรกที่จับมือกัน<br>
+    เราจำได้ว่าใจเต้นแรงมากจนกลัวเธอจะได้ยิน<br>
+    วันนั้นกลับบ้านแล้วนอนไม่หลับทั้งคืน<br>
+    เพราะรู้แล้วว่าตัวเองเลยจุดที่จะถอยกลับมาแล้ว</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ เจ็ด</div>
+    <p>เราไม่ได้เจอกันบ่อยเลย<br>
+    เดือนละครั้ง สองครั้ง<br>
+    แต่แปลกดี ที่ไม่เคยรู้สึกว่าเธอไกล<br>
+    เพราะทุกวันที่ผ่านไป เธออยู่ในหัวเราตลอด</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ แปด</div>
+    <p>เริ่มคิดถึงเธอในเวลาที่ไม่ควรจะคิด<br>
+    ตอนกินข้าว ตอนเดินกลับบ้าน ตอนเจอเพลงที่เธอชอบ<br>
+    เริ่มเก็บเรื่องเล็ก ๆ ไว้เล่าให้เธอฟัง<br>
+    ทั้งที่มันไม่ใช่เรื่องสำคัญอะไรเลย</p>
+  </div>
+
+  <div class="month">
+    <div class="small">เดือนที่ เก้า</div>
+    <p>เราทำทุกอย่างเหมือนคนที่รักกันแล้ว<br>
+    ขาดอยู่อย่างเดียว<br>
+    คือคำที่ยังไม่มีใครกล้าพูดออกมา</p>
+    <p class="serif" style="color:#2e2a28">และวันนี้เราจะพูดเอง</p>
+  </div>
+
+  <div class="dots" id="dots"></div>
+  <button class="btn" id="next" onclick="nextMonth()">ต่อไป</button>
+</div>
+
+<!-- ========== 3 : คำถาม ========== -->
+<div class="screen" id="s3">
+  <div class="small">คำถามเดียว</div>
+  <h1 class="serif">อะตอม<br>เป็นแฟนเรานะ</h1>
+  <div class="line"></div>
+  <p>เราไม่อยากเป็นแค่คนที่คุยกันทุกวันแล้ว<br>
+  อยากเป็นคนที่เธอเรียกว่าแฟน<br>
+  อยากเป็นคนที่มีสิทธิ์คิดถึงเธอได้เต็มที่<br>
+  โดยไม่ต้องกลัวว่ามันจะมากเกินไป</p>
+  <div style="margin-top:26px">
+    <button class="btn" onclick="yes()">ตกลง</button><br>
+    <button class="btn soft" onclick="go('s5')">อยากฟังจากปากเธอ</button><br>
+    <button class="btn soft" id="no">ขอคิดก่อน</button>
+  </div>
+</div>
+
+<!-- ========== 4 : ตกลง ========== -->
+<div class="screen" id="s4">
+  <div class="small">ขอบคุณนะอะตอม</div>
+  <h1 class="serif">ตั้งแต่วันนี้<br>เธอเป็นของเราแล้ว</h1>
+  <div class="line"></div>
+  <p>สัญญาว่าจะไม่ทำให้ระยะทาง<br>
+  กลายเป็นเหตุผลที่ทำให้เราห่างกัน<br>
+  เจอกันเดือนละครั้งก็ได้<br>
+  ขอแค่เป็นครั้งที่เธอรอเหมือนที่เรารอ</p>
+  <p class="note">แล้ว… เจอกันครั้งหน้าวันไหนดี</p>
+</div>
+
+<!-- ========== 5 : อยากฟังจากปาก ========== -->
+<div class="screen" id="s5">
+  <div class="small">คำตอบของเธอ</div>
+  <h1 class="serif">ได้สิ<br>เดี๋ยวเราพูดเอง</h1>
+  <div class="line"></div>
+  <p>ที่จริงเราก็อยากพูดเองอยู่แล้ว<br>
+  แค่กลัวว่าพอเจอหน้าเธอ<br>
+  จะพูดไม่ออกเหมือนครั้งแรกอีก</p>
+  <p>เก็บคำถามนี้ไว้ก่อนนะอะตอม<br>
+  เดี๋ยวเจอกันคราวหน้า<br>
+  เราจะถามอีกครั้ง ต่อหน้าเธอ</p>
+  <p class="note">แล้วคราวนี้เราจะไม่พูดผ่านจอแล้ว</p>
+  <button class="btn" onclick="yes()" style="margin-top:18px">งั้นรอฟังนะ</button>
+</div>
+
+</div>
+
+<script>
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------- ไทม์ไลน์ ---------- */
+let i=0;
+const months=document.querySelectorAll('.month');
+const dots=document.getElementById('dots');
+months.forEach(()=>dots.innerHTML+='<span class="dot"></span>');
+const dotEls=document.querySelectorAll('.dot');
+dotEls[0].classList.add('on');
+
+function nextMonth(){
+  months[i].classList.remove('show');
+  dotEls[i].classList.remove('on');
+  i++;
+  if(i>=months.length){go('s3');return;}
+  months[i].classList.add('show');
+  dotEls[i].classList.add('on');
+  if(i===months.length-1) document.getElementById('next').textContent='พร้อมฟังแล้ว';
+}
+
+/* ---------- ปุ่มขอคิดก่อน ---------- */
+const no=document.getElementById('no');
+const run=()=>{
+  no.style.position='fixed';
+  no.style.left=Math.random()*(innerWidth-180)+'px';
+  no.style.top=Math.random()*(innerHeight-80)+'px';
+};
+no.addEventListener('mouseover',run);
+no.addEventListener('click',e=>{e.preventDefault();run();});
+
+/* ---------- เพลง YouTube ---------- */
+const yt=document.getElementById('yt');
+const mBtn=document.getElementById('music');
+let playing=false;
+function ytCmd(fn){
+  yt.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:[]}),'*');
+}
+mBtn.onclick=()=>{
+  if(playing){ytCmd('pauseVideo');mBtn.textContent='♪ เปิดเพลง';}
+  else{ytCmd('playVideo');mBtn.textContent='♪ ปิดเพลง';}
+  playing=!playing;
+};
+
+/* ---------- ตอบตกลง ---------- */
+function yes(){
+  go('s4');
+  const p=['❀','✿','❁','•'];
+  for(let n=0;n<45;n++){
+    const d=document.createElement('div');
+    d.className='petal';
+    d.textContent=p[Math.floor(Math.random()*p.length)];
+    d.style.left=Math.random()*100+'vw';
+    d.style.animationDuration=(Math.random()*4+4)+'s';
+    d.style.animationDelay=Math.random()*3+'s';
+    document.body.appendChild(d);
+  }
+}
+</script>
+</body>
+</html>
